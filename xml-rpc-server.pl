@@ -28,7 +28,8 @@ $daemon->server_loop();
 sub test {
     #    my $server_obj  = shift;
     my $xml	    = shift;
-    print Dumper $xml;
+    #print Dumper $xml;
     Four51toMFF( $xml );
+    return "200";
 }
 
