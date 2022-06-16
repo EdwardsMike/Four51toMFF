@@ -11,7 +11,7 @@ post '/toMFF' => sub ( $c ) {
         timestamp => ( TimeStamp() =~ s/\s/T/r ) );
     
     save_xml( $dom ); 
-    my $ff_prder = Four51toMFF( $dom ); # This may silently fail...
+    my $ff_order = Four51toMFF( $dom ); # This may silently fail...
 };
  
 app->start;
