@@ -23,7 +23,8 @@ my @PRODUCTS;
 
 # Now get item details
 foreach my $buyer ( sort keys %{ $ACCTS } ) {
-    next if $buyer =~ m/^KT/;
+    print STDERR $buyer;
+    #next if $buyer =~ m/^KT/;
     my $mff_id	= $ACCTS->{ $buyer }->{ MFF_ID };
     my $hashref	= inventory_status( $mff_id );
 
@@ -37,6 +38,7 @@ foreach my $buyer ( sort keys %{ $ACCTS } ) {
 	}
 	my $qty	    = $hashref->{ $_ };
 	push @PRODUCTS, [ $product, $variant, $qty ];
+	print STDERR $product, $variant, $qty;
     }
 }
 
