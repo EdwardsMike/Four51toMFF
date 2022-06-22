@@ -131,7 +131,7 @@ sub parse_config {
     return \%HASH;
 }
 
-sub read_track {
+sub read_tracking {
     my $fn = shift;
     open my $fh, "<", $fn
 	or die "Can't open $fn: $!";
