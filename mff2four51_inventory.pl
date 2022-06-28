@@ -31,11 +31,14 @@ my $our_emails	= 'beth@ceprinter.com, jim.edwards@ceprinter.com';
 # Set up a string for our confirmation email
 my @message = [ 'Buyer', 'Product', 'Variant', 'Qty.' ];
 
+GetOptions( "debug!"	=> \$debug,
+);
+
 my @PRODUCTS;
 
 # Now get item details
 foreach my $buyer ( sort keys %{ $ACCTS } ) {
-    print STDERR $buyer
+    print STDERR "Processing $buyer"
 	if $debug;
     # Skip the Helix test account
     next if $buyer =~ m/^Helix/;
